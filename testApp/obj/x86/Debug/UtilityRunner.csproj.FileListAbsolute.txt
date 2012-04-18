@@ -1,0 +1,9 @@
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\UtilityRunner.exe.config
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\UtilityRunner.exe
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\UtilityRunner.pdb
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\RedRobin.DataAccess.dll
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\Utilities.dll
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\RedRobin.DataAccess.pdb
+C:\root\dev\RedRobinXmlImport\testApp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\root\dev\RedRobinXmlImport\testApp\obj\x86\Debug\UtilityRunner.exe
+C:\root\dev\RedRobinXmlImport\testApp\obj\x86\Debug\UtilityRunner.pdb

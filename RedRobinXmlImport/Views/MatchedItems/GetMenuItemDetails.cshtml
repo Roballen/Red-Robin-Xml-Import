@@ -1,0 +1,23 @@
+﻿@using RedRobin.DataAccess.Models
+@model XmlMenuItem
+@{
+    Layout = null;
+}
+<div class="header">
+    <div id="match-ingredients-modal">
+        @Html.ActionLink("Click to Select Menu Match", "MenuItemMatchControl", "MatchedItems",
+                                 new { xmlmenuitemid = @Model.ItemGuid },
+                        new { @class = "openDialog", data_dialog_id = "MatchDialog", data_dialog_title = "Find Menu Item for  " + @Model.ItemName })
+    </div>
+</div>
+@if (@Model.MenuItemMatch != null)
+{
+    <ul>
+        <li>Name: @Model.MenuItemMatch.name</li>
+        <li>Guid: @Model.MenuItemMatch.DataObjectId</li>
+        <li>Image Url: @Model.MenuItemMatch.imageurl</li>
+        <li>Menu Item Id: @Model.MenuItemMatch.menuitemid</li>
+        <li>Active?: @Model.MenuItemMatch.active</li>
+        <li>Service Id: @Model.MenuItemMatch.ServiceObjectId</li>
+    </ul>
+}

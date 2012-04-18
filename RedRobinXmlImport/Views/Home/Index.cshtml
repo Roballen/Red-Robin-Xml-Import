@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    Customizer will attempt to match an xml file based on manual mappings.  The theory is that the item_guid in the xml will be consistent, and once mapped to a menu item and ingredient we can merely update the data.
+</p>
+
+<h3>Fuctional Requirements</h3>
+<ul>
+
+<li>Map Menu item</li>
+<li>Map Ingredient item</li>
+<li>Clients are okay with alot of manual work on the front end</li>
+<li>Build Menu and Igrendients Cross References</li>
+<li>Automatically Update Nutritional Data</li>
+</ul>
+
+<h3>Operational Restrictions</h3>
+<ul>
+
+<li>You can run update tool anytime, only matched items will be updated</li>
+<li>You must map all ingredients for each menu item or it is a partial update</li>
+<li>item guid in the xml must be consistent, although it appears the name is consistent</li>
+</ul>
+
+<h3>optional features</h3>
+<ul>
+
+<li>CRUD for Menu Items</li>
+<li>CRUD for Ingredient item, including nutritional items</li>
+<li>Suggestive matching for easier and faster mapping</li>
+</ul>
+
+<h3>Other notes</h3>
+<ul>
+
+<li>Names of ingredients need to be unique, I have found that there are many duplicate ingredient items</li>
+<li>The totals under menu item in the xml are unused and should just be the sums of the ingredients</li>
+<li>Some ingredients might map to the same menu item</li>
+<li>ServiceObjectId is used for the mobile devices</li>
+<li>As far as I can tell, DataObjectId is only used by import, expectation is it will stay the same</li>
+<li>I can't blow away all ingredient cross references unless the item is fully matched, otherwise predictive mathcing is hosed</li>
+</ul>
+
+<h3>Questions</h3>
+<ul>
+
+<li>MenuItemsIngredients, what to do with sort index?</li>
+</ul>
+
+<h3>Set Up Instructions</h3>
+<ul>
+
+<li>Build tables XmlIngredientsXref, XmlMenuItemsXref, create indexes</li>
+<li>Run Transformation program to automate as much as half of the mappings</li>
+<li>need to drop all the xmlimport*deletions|*additions tables, no need to log that stuff</li>
+</ul>

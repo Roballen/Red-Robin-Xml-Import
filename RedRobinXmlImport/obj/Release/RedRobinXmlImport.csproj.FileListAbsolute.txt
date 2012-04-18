@@ -1,0 +1,7 @@
+C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\bin\RedRobinXmlImport.dll
+C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\bin\RedRobinXmlImport.pdb
+C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\bin\EntityFramework.dll
+C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\bin\EntityFramework.xml
+C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\obj\Release\ResolveAssemblyReference.cache
+C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\obj\Release\RedRobinXmlImport.dll
+C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\obj\Release\RedRobinXmlImport.pdb

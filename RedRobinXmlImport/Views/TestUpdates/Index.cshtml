@@ -1,0 +1,22 @@
+﻿@using RedRobin.DataAccess.Models.Generated
+@model MenuItem
+
+@{
+    ViewBag.Title = "Test Tool";
+}
+
+@if ( Model != null )
+{
+    @Html.Partial("GetIngredientDetails", Model);
+}
+
+<h2>A Test Tool to look at menu data after updates</h2>
+
+<form action="/TestUpdates/GetExample" method="post">
+<input type="text" id="guid" name="guid" />
+<br />
+<br />
+<input type="submit" value="Send" name="btnUpload" id="Submit1" />
+</form>
+
+@*http://customizer.redrobin.com/customizer/assets/images/thumbnails/A1PeppercornBurger.jpg*@

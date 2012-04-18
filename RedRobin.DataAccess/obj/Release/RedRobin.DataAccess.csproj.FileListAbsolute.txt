@@ -1,0 +1,9 @@
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\bin\Release\RedRobin.DataAccess.dll.config
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\bin\Release\RedRobin.DataAccess.dll
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\bin\Release\RedRobin.DataAccess.pdb
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\bin\Release\EntityFramework.dll
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\bin\Release\Utilities.dll
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\bin\Release\EntityFramework.xml
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\obj\Release\ResolveAssemblyReference.cache
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\obj\Release\RedRobin.DataAccess.dll
+C:\root\dev\RedRobinXmlImport\RedRobin.DataAccess\obj\Release\RedRobin.DataAccess.pdb

@@ -1,0 +1,1 @@
+C:\root\dev\RedRobinXmlImport\testApp\bin\Release\testApp.exe.config

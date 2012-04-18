@@ -1,0 +1,28 @@
+﻿@using RedRobin.DataAccess.Models.Generated
+@model XmlImport
+
+@{
+    ViewBag.Title = "Update Nutrional Information";
+}
+
+<h2>Update Nutrional Information for @Model.XmlFileName uploaded on @Model.ImportDate</h2>
+
+<h3>Clicking below will update all nutrional information for matched items, the list below describes the process</h3>
+
+<ul>
+<li>We will verify that an xml file has been uploaded</li>
+<li>All menu matched ingredients for each menu item in xml will be queried</li>
+<li>We will update the MenuItemsIngredients cross reference table by removing unmatched items, leaving the same items, and adding new items</li>
+<li>We will then update the nutrional facts table.  If a fact is not there, we will add it, if it is there we will update</li>
+<li>This should cascade back to the menu item and dislay appropriate nutrional information</li>
+</ul>
+
+
+<form action="/UpdateNutrionalInformation/UpdateNutritionalInformation" method="post">
+<input type="submit" value="Run Update Tool" name="btnUpload" id="Submit1" />
+</form>
+
+@*@Html.ActionLink("Run Update Tool","UpdateNutritionalInformation","UpdateNutrionalInformation")*@
+
+
+

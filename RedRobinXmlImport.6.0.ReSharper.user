@@ -1,0 +1,299 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/d:Models/f:PetaPocoRelationExtensions.cs" caret="0" fromTop="0" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/d:Utilities/f:XmlUtility.cs" caret="153" fromTop="2" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/f:Web.config" caret="441" fromTop="11" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Controllers/f:HomeController.cs" caret="0" fromTop="0" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/d:Models/f:XmlMenuItem.cs" caret="291" fromTop="7" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/d:Utilities/f:ValueUtility.cs" caret="185" fromTop="7" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/d:Models/d:Generated/f:Database.tt" caret="0" fromTop="0" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/d:Models/d:Generated/f:Database.cs" caret="5414" fromTop="9" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/f:XmlParser.cs" caret="6132" fromTop="8" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/d:Properties/f:AssemblyInfo.cs" caret="1123" fromTop="10" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/d:Models/f:PetaPoco.cs" caret="23542" fromTop="26" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/f:IMatchRepository.cs" caret="486" fromTop="16" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:Home/f:Index.cshtml" caret="804" fromTop="23" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/f:_ViewStart.cshtml" caret="0" fromTop="0" />
+      <File id="358A3D24-0CCF-4674-9B47-7A40254FBAC8/f:Program.cs" caret="718" fromTop="13" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/f:MatchedItemRepository_pp.cs" caret="532" fromTop="17" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Controllers/f:MatchedItemsController.cs" caret="672" fromTop="23" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:Shared/f:_Layout.cshtml" caret="610" fromTop="15" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="95" fromTop="12" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="592" fromTop="17" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:Home/f:Index.cshtml" caret="998" fromTop="23" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:Home/f:Index.cshtml" caret="811" fromTop="25" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:Home/f:Index.cshtml" caret="804" fromTop="23" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:Shared/f:_Layout.cshtml" caret="610" fromTop="14" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/f:IMatchRepository.cs" caret="557" fromTop="17" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/f:MatchedItemRepository_pp.cs" caret="248" fromTop="8" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/f:MatchedItemRepository_pp.cs" caret="1389" fromTop="27" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/f:MatchedItemRepository_pp.cs" caret="477" fromTop="13" />
+      <File id="B64B7A80-1093-4FC2-9831-B6BE018505E8/f:MatchedItemRepository_pp.cs" caret="704" fromTop="20" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Controllers/f:MatchedItemsController.cs" caret="716" fromTop="17" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="1028" fromTop="3" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="1028" fromTop="15" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:Shared/f:_Layout.cshtml" caret="208" fromTop="5" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Controllers/f:MatchedItemsController.cs" caret="697" fromTop="24" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Controllers/f:MatchedItemsController.cs" caret="684" fromTop="23" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:Shared/f:_Layout.cshtml" caret="919" fromTop="21" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="399" fromTop="3" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="399" fromTop="20" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="399" fromTop="17" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="399" fromTop="10" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="0" fromTop="0" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="1028" fromTop="28" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="1028" fromTop="12" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="509" fromTop="15" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="489" fromTop="16" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="563" fromTop="15" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="55" fromTop="9" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="325" fromTop="25" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Content/f:matchimizer.css" caret="95" fromTop="12" />
+      <File id="CBC0D1D2-BF01-4196-8666-3793D5F264A5/d:Views/d:MatchedItems/f:MatchedMenuItems.cshtml" caret="775" fromTop="23" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="interface" priority="30" />
+      <Item value="IList" priority="31" />
+      <Item value="public" priority="445" />
+      <Item value="int" priority="127" />
+      <Item value="string" priority="319" />
+      <Item value="db" priority="190" />
+      <Item value="Console`0" priority="351" />
+      <Item value="XmlImportIngredient`0" priority="127" />
+      <Item value="Ingredient`0" priority="95" />
+      <Item value="a" priority="95" />
+      <Item value="b" priority="95" />
+      <Item value="XmlIngredientsXref`0" priority="63" />
+      <Item value="new" priority="319" />
+      <Item value="XmlIngredientsXref" priority="58" />
+      <Item value="ixref" priority="95" />
+      <Item value="if" priority="415" />
+      <Item value="XmlImportMenuItem`0" priority="127" />
+      <Item value="List" priority="191" />
+      <Item value="class" priority="61" />
+      <Item value="XmlService`0" priority="31" />
+      <Item value="static" priority="191" />
+      <Item value="XmlMenuItem`0" priority="286" />
+      <Item value="XmlMenuItems`0" priority="127" />
+      <Item value="filename" priority="95" />
+      <Item value="XmlIngredient`0" priority="127" />
+      <Item value="return" priority="351" />
+      <Item value="XmlMenuItems" priority="57" />
+      <Item value="var" priority="287" />
+      <Item value="menuItemNodes" priority="31" />
+      <Item value="result" priority="127" />
+      <Item value="foreach" priority="189" />
+      <Item value="XmlNode`0" priority="63" />
+      <Item value="ingredientNodes" priority="31" />
+      <Item value="menuItem" priority="127" />
+      <Item value="name" priority="31" />
+      <Item value="items" priority="63" />
+      <Item value="null" priority="191" />
+      <Item value="menuItemId" priority="31" />
+      <Item value="GetMenuItemByName`0" priority="31" />
+      <Item value="xmlMenuItem" priority="159" />
+      <Item value="XmlMenuItemsXref" priority="28" />
+      <Item value="mxr" priority="191" />
+      <Item value="importmenuitem" priority="95" />
+      <Item value="menuitem" priority="191" />
+      <Item value="MenuItem`0" priority="95" />
+      <Item value="GetIngredients`0" priority="63" />
+      <Item value="xmlIngredient" priority="127" />
+      <Item value="importingredientitem" priority="31" />
+      <Item value="ixr" priority="223" />
+      <Item value="ingredientitem" priority="95" />
+      <Item value="Guid`0" priority="31" />
+      <Item value="break" priority="31" />
+      <Item value="continue" priority="63" />
+      <Item value="try" priority="31" />
+      <Item value="e" priority="31" />
+      <Item value="Ingredients" priority="31" />
+      <Item value="List&lt;XmlIngredient&gt;" priority="57" />
+      <Item value="true" priority="31" />
+      <Item value="private" priority="95" />
+      <Item value="void" priority="63" />
+      <Item value="db2" priority="31" />
+      <Item value="XmlMenuItemsXref`0" priority="91" />
+      <Item value="dalist" priority="63" />
+      <Item value="i" priority="31" />
+      <Item value="found" priority="63" />
+      <Item value="String`0" priority="31" />
+      <Item value="IMatchRepository`0" priority="31" />
+      <Item value="GetDataBase`0" priority="31" />
+      <Item value="repo" priority="31" />
+      <Item value="HttpCacheVaryByContentEncodings`0" priority="31" />
+      <Item value="in" priority="31" />
+      <Item value="ModelBinderAttribute`0" priority="31" />
+      <Item value="Model" priority="31" />
+      <Item value="model" priority="29" />
+      <Item value="ASP" priority="26" />
+      <Item value="DateTime`0" priority="29" />
+      <Item value="xref" priority="89" />
+      <Item value="igredientname" priority="3" />
+      <Item value="div" priority="29" />
+      <Item value="MatchedItems" priority="32" />
+      <Item value="UnmatchedMenuItems" priority="32" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.XmlImportIngredient">
+      <Item value="ItemIngredientName" priority="80" />
+      <Item value="ItemIngredientGuid" priority="107" />
+      <Item value="IsNew`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="ReadLine`0" priority="80" />
+      <Item value="Write`0" priority="26" />
+      <Item value="WriteLine`0" priority="215" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:PetaPoco.Database">
+      <Item value="Query`3" priority="54" />
+      <Item value="Fetch`1" priority="137" />
+      <Item value="Query`1" priority="53" />
+      <Item value="First`1" priority="26" />
+      <Item value="Fetch`3" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.Ingredient">
+      <Item value="managename" priority="107" />
+      <Item value="DataObjectId" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.XmlIngredientsXref">
+      <Item value="igredientname" priority="53" />
+      <Item value="ingredientsguid" priority="53" />
+      <Item value="xmlguid" priority="26" />
+      <Item value="xmlingredientname" priority="26" />
+      <Item value="xmlmenuitemguid" priority="26" />
+      <Item value="xmlmenuitemname" priority="26" />
+      <Item value="Insert`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Utilities.FileTools">
+      <Item value="SFileExists`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.DataAccess.Models.XmlMenuItem">
+      <Item value="Ingredients" priority="107" />
+      <Item value="ItemName" priority="134" />
+      <Item value="ItemGuid" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="26" />
+      <Item value="FirstOrDefault`1" priority="80" />
+      <Item value="SingleOrDefault`1" priority="110" />
+      <Item value="Count" priority="27" />
+      <Item value="First`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.DataAccess.Models.XmlMenuItems">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@RedRobin.Customizer.Import.Data.Services.XmlService">
+      <Item value="ParseXml`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="First`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.XmlMenuItemsXref">
+      <Item value="menuitemguid" priority="53" />
+      <Item value="menuitemname" priority="26" />
+      <Item value="xmlguid" priority="26" />
+      <Item value="xmlitemname" priority="26" />
+      <Item value="Save`0" priority="26" />
+      <Item value="Insert`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.XmlImportMenuItem">
+      <Item value="ItemGuid" priority="26" />
+      <Item value="XmlImportMenuItemId" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.MenuItem">
+      <Item value="DataObjectId" priority="26" />
+      <Item value="name" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.DataAccess.Models.XmlIngredient">
+      <Item value="ItemIngredientGuid" priority="53" />
+      <Item value="ItemIngredientName" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.DataAccess.Models.Generated.XmlMenuItemsXref">
+      <Item value="idpk" priority="26" />
+      <Item value="menuitemname" priority="53" />
+      <Item value="xmlguid" priority="54" />
+      <Item value="xmlitemname" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.DataAccess.Models.Generated.MenuItem">
+      <Item value="DataObjectId" priority="26" />
+      <Item value="name" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Replace`0" priority="81" />
+    </ItemStatistics>
+    <ItemStatistics item="HtmlCodeCompletionContext">
+      <Item value="ul" priority="11" />
+      <Item value="h3" priority="5" />
+      <Item value="li" priority="23" />
+      <Item value="class" priority="53" />
+      <Item value="div" priority="58" />
+      <Item value="ui-corner-left" priority="5" />
+      <Item value="ui-datepicker-row-break" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.DataAccess.MatchedItemRepository_pp">
+      <Item value="GetMatchedIngredients`0" priority="26" />
+      <Item value="GetMatchedMenuItems`0" priority="27" />
+      <Item value="GetUnMatchedMenuItems`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="RazorTransitionCompletionContext">
+      <Item value="foreach" priority="7" />
+      <Item value="model" priority="7" />
+      <Item value="ASP" priority="5" />
+      <Item value="DateTime`0" priority="9" />
+      <Item value="xref" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RedRobin.DataAccess.Models.Generated.XmlIngredientsXref">
+      <Item value="igredientname" priority="53" />
+      <Item value="xmlingredientname" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="CssCodeCompletionContext">
+      <Item value="match-container" priority="4" />
+      <Item value="float" priority="5" />
+      <Item value="overflow" priority="5" />
+      <Item value="hidden" priority="6" />
+      <Item value="half" priority="4" />
+      <Item value="width" priority="5" />
+      <Item value="text-align" priority="5" />
+      <Item value="left" priority="4" />
+      <Item value="border" priority="3" />
+      <Item value="ButtonShadow" priority="4" />
+      <Item value="solid" priority="4" />
+      <Item value="border-color" priority="7" />
+      <Item value="padding-top" priority="3" />
+      <Item value="padding-bottom" priority="3" />
+      <Item value="lightgrey" priority="4" />
+      <Item value="margin-top" priority="3" />
+      <Item value="text-shadow" priority="3" />
+      <Item value="border-radius" priority="3" />
+      <Item value="row-header" priority="3" />
+      <Item value="font-size" priority="3" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

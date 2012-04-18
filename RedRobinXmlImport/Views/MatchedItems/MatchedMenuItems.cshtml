@@ -1,0 +1,45 @@
+﻿@using RedRobin.DataAccess.Models.Generated
+@model System.Collections.Generic.List<RedRobin.DataAccess.Models.Generated.XmlMenuItemsXref>
+@{
+    ViewBag.Title = "Matched Menu Items";
+    Layout = @"\Views\Shared\_Layout.cshtml";
+}
+<h2>
+    @ViewBag.Total items</h2>
+<div class="row-header">
+    <div class="item">
+        <div class="header">
+            Xml Item</div>
+    </div>
+    <div class="item">
+        <div class="header">
+            Match Candidate</div>
+    </div>
+</div>
+@foreach (XmlMenuItemsXref xref in Model)
+{
+   
+<a class="match" href="/MatchedItems/MatchAggregate?xmlguid=@xref.xmlguid&menuitemguid=@xref.menuitemguid">
+    <div class="matchrow">
+        <div class="item">
+            <div class="header">@xref.xmlitemname</div>
+            <div class="details">
+                <ul>
+                    <li>Guid: @xref.xmlguid</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">@xref.menuitemname</div>
+            <div class="details">
+                @if (!string.IsNullOrEmpty(@xref.menuitemguid.ToString()))
+                {
+                    <ul>
+                        <li>Guid: @xref.menuitemguid</li>
+                    </ul>}
+            </div>
+        </div>
+    </div>
+
+</a>
+}

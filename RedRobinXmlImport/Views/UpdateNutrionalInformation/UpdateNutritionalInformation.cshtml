@@ -1,0 +1,25 @@
+﻿@using RedRobin.DataAccess.Models
+@model UpdateResults
+
+@{
+    ViewBag.Title = "Update Results";
+}
+
+<h2>Update Results</h2>
+<ul class="notify">
+<li>Menu Item Updates: @Model.MenuItemsUpdated</li>
+<li>Igredient Updates: @Model.IngredientsUpdated</li>
+<li>Nutrition Updates: @Model.NutrionalFactsUpdates</li>
+</ul>
+
+Errors:
+    <ul class="error-message">
+@foreach ( var error in Model.Errors )
+{
+
+    <li> @error.Key </li>
+    <ul><li>@error.Value</li></ul>
+    
+
+}
+    </ul>

@@ -1,0 +1,42 @@
+﻿@using RedRobin.DataAccess.Models
+@model XmlMenuItem
+@{
+    ViewBag.Title = "Matching Details for " + @Model.ItemName;
+    Layout = @"\Views\Shared\_Layout.cshtml";
+}
+<h2>
+    Matching Details for @Model.ItemName</h2>
+<div class="matchdetails">
+    <div class="matchrow">
+        <br />
+        <div class="item">
+            <div class="details">
+                <div class="header">
+                    Xml Item</div>
+                <ul>
+                    <li>Name: @Model.ItemName</li>
+                    <li>Guid: @Model.ItemGuid</li>
+                    <li>Xml Import Menu Item Id: @Model.XmlImportMenuItemId</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div id="@Model.ItemGuid-matched" class="details">
+            @Html.Partial("GetMenuItemDetails",@Model)
+
+            </div>
+        </div>
+    </div>
+    @foreach (var ingredient in Model.Ingredients)
+    {
+        <div id="match-ingredients-item" class="matchrow">
+            <div class="item">
+                @Html.Partial("GetXmlIngredientDetails", ingredient)</div>
+            <div id="@ingredient.ItemIngredientGuid-matched" class="item">
+
+                    @Html.Partial("GetIngredientDetails", ingredient)
+               
+            </div>
+        </div>
+    }
+</div>

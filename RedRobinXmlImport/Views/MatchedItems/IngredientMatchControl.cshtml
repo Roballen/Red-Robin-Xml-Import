@@ -1,0 +1,44 @@
+﻿@using RedRobin.DataAccess.Models
+@model IngredientCandidates
+@{
+    Layout = null;
+}
+    <div class="match-control byname">
+    Match Candidates By Name
+@foreach (var ingredient in Model.ByNameCandidates)
+{
+       <div>
+        Match with this ingredient
+
+        @Html.RadioButton(Model.XmlIngredient.ItemIngredientGuid, ingredient.DataObjectId)
+        <ul>
+            <li>Display Name: @ingredient.displayname</li>
+            <li>Manage Name: @ingredient.managename</li>
+            <li>Guid: @ingredient.DataObjectId</li>
+            <li>serving size: @ingredient.servingsize</li>
+        </ul>
+       
+       </div>
+
+}
+</div>
+    <div class="match-control byprevious">
+    Previously Matched Ingredients
+@foreach (var ingredient in Model.ByPreviousCandidates)
+{
+
+       <div>
+        Match with this ingredient
+        @Html.RadioButton(Model.XmlIngredient.ItemIngredientGuid, ingredient.DataObjectId)
+        <ul>
+            <li>Display Name: @ingredient.displayname</li>
+            <li>Manage Name: @ingredient.managename</li>
+            <li>Guid: @ingredient.DataObjectId</li>
+            <li>serving size: @ingredient.servingsize</li>
+        </ul>
+       
+       </div>
+
+}
+
+    </div>

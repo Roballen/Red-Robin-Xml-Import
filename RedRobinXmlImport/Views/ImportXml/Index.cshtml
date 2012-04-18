@@ -1,0 +1,25 @@
+﻿@model RedRobin.DataAccess.Models.XmlImportResults
+@{
+    ViewBag.Title = "Import Xml";
+    Layout = @"\Views\Shared\_Layout.cshtml";
+}
+<h2>
+    Select a local Xml file to import</h2>
+@if (@Model != null)
+{
+    if (@Model.Success)
+    {
+    <h3 class="notify">@Model.MenuItemsUploaded menu items uploaded.</h3>
+    <h3 class="notify">@Model.IngredientsUploaded ingredients uploaded.</h3>
+    }
+    else
+    {
+    <h3 class="error-message">@Model.ErrorMessage</h3>
+    }
+}
+<form action="/ImportXml/UploadXml" enctype="multipart/form-data" method="post">
+<input type="file" id="SourceFile" name="SourceFile" />
+<br />
+<br />
+<input type="submit" value="Send" name="btnUpload" id="Submit1" />
+</form>

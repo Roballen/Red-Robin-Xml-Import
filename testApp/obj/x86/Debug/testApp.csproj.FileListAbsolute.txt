@@ -1,0 +1,8 @@
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\testApp.exe.config
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\testApp.exe
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\testApp.pdb
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\RedRobin.DataAccess.dll
+C:\root\dev\RedRobinXmlImport\testApp\bin\Debug\RedRobin.DataAccess.pdb
+C:\root\dev\RedRobinXmlImport\testApp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\root\dev\RedRobinXmlImport\testApp\obj\x86\Debug\testApp.exe
+C:\root\dev\RedRobinXmlImport\testApp\obj\x86\Debug\testApp.pdb

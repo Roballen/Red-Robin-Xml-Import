@@ -1,0 +1,22 @@
+﻿@using RedRobin.DataAccess.Models
+@model MenuItemCandidates
+@{
+    Layout = null;
+}
+<div class="menu-match-control byname">
+    Match Candidates By Name
+    @foreach (var menuitem in Model.ByNameCandidates)
+    {
+        <div>
+            Match with this Menu Item
+            @Html.RadioButton(Model.XmlMenuItem.ItemGuid, menuitem.DataObjectId)
+            <ul>
+                <li><strong>Display Name: @menuitem.name</strong></li>
+                <li>Guid: @menuitem.DataObjectId</li>
+                <li>Category: @menuitem.menucategoryid</li>
+                <li>Description: @menuitem.description</li>
+            </ul>
+        </div>
+
+    }
+</div>

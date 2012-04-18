@@ -1,0 +1,74 @@
+﻿/****** Script for SelectTopNRows command from SSMS  ******/
+use RedRobin
+Select XmlMenuItemsXref.xmlguid as xmlmenuguid,
+XmlMenuItemsXref.menuitemguid as menuguid,
+XmlIngredientsXref.[xmlguid] as xmlingredientguid,
+XmlIngredientsXref.ingredientsguid as ingredientguid,
+Ingredients.ingredientid as ingredientid,
+MenuItems.menuitemid as menuid,
+
+MenuItemIngredients.sortindex as sortindex,
+MenuItemIngredients.menuitemingredientid as xrefpk,
+MenuItemIngredients.DataObjectId as xrefdataobject,
+MenuItemIngredients.ServiceObjectId as xrefserviceobject
+
+
+from XmlMenuItemsXref 
+left outer join MenuItems on XmlMenuItemsXref.menuitemguid = MenuItems.DataObjectId
+left outer join XmlIngredientsXref on  XmlMenuItemsXref.xmlguid = XmlIngredientsXref.xmlmenuitemguid
+left outer join Ingredients on Ingredients.DataObjectId = XmlIngredientsXref.ingredientsguid
+left outer join MenuItemIngredients on ( Ingredients.ingredientid = MenuItemIngredients.ingredientid and MenuItems.menuitemid = MenuItemIngredients.menuitemid )
+where menuitemguid IS NOT NULL and 
+(select COUNT(*) from XmlIngredientsXref where XmlMenuItemsXref.xmlguid = XmlIngredientsXref.xmlmenuitemguid and XmlIngredientsXref.ingredientsguid IS NULL) = 0
+order by menuguid
+
+
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+use RedRobin
+Select XmlMenuItemsXref.xmlguid, COUNT(*)
+
+from XmlMenuItemsXref 
+left outer join XmlIngredientsXref on  XmlMenuItemsXref.xmlguid = XmlIngredientsXref.xmlmenuitemguid
+left outer join Ingredients on Ingredients.DataObjectId = XmlIngredientsXref.ingredientsguid
+where menuitemguid IS NOT NULL and 
+(select COUNT(*) from XmlIngredientsXref where XmlMenuItemsXref.xmlguid = XmlIngredientsXref.xmlmenuitemguid and XmlIngredientsXref.ingredientsguid IS NULL) = 0
+group by XmlMenuItemsXref.xmlguid
+
+
+ Select XmlMenuItemsXref.xmlguid as xmlmenuguid,
+ XmlMenuItemsXref.menuitemguid as menuguid,
+ XmlIngredientsXref.[xmlguid] as xmlingredientguid,
+ XmlIngredientsXref.ingredientsguid as ingredientguid,
+ Ingredients.ingredientid as ingredientid
+ MenuItems.menuitemid as menuid
+ from XmlMenuItemsXref 
+ left outer join MenuItems on XmlMenuItemsXref.menuitemguid = MenuItems.DataObjectId
+ left outer join XmlIngredientsXref on  XmlMenuItemsXref.xmlguid = XmlIngredientsXref.xmlmenuitemguid
+ left outer join Ingredients on Ingredients.DataObjectId = XmlIngredientsXref.ingredientsguid
+ where menuitemguid IS NOT NULL and 
+ (select COUNT(*) from XmlIngredientsXref where XmlMenuItemsXref.xmlguid = XmlIngredientsXref.xmlmenuitemguid and XmlIngredientsXref.ingredientsguid IS NULL) = 0
+ order by menuguid
+
+
+select * from MenuItemIngredients where menuitemid = '2161' and ingredientid = '4522'
+
+
+---------------------------------
+  use RedRobin
+   Select XmlMenuItemsXref.xmlguid as xmlmenuguid,
+ XmlMenuItemsXref.menuitemguid as menuguid,
+ XmlIngredientsXref.[xmlguid] as xmlingredientguid,
+ XmlIngredientsXref.ingredientsguid as ingredientguid,
+ Ingredients.ingredientid as ingredientid,
+ MenuItems.menuitemid as menuid,
+ MenuItemIngredients.sortindex ,
+ MenuItemIngredients.menuitemingredientid as xrefpk,
+ MenuItemIngredients.DataObjectId ,
+ MenuItemIngredients.ServiceObjectId 
+ from XmlMenuItemsXref 
+ left outer join MenuItems on XmlMenuItemsXref.menuitemguid = MenuItems.DataObjectId
+ left outer join XmlIngredientsXref on  XmlMenuItemsXref.xmlguid = XmlIngredientsXref.xmlmenuitemguid
+ left outer join Ingredients on Ingredients.DataObjectId = XmlIngredientsXref.ingredientsguid
+ left outer join MenuItemIngredients on ( Ingredients.ingredientid = MenuItemIngredients.ingredientid and MenuItems.menuitemid = MenuItemIngredients.menuitemid )
+where MenuItems.menuitemid = 2002

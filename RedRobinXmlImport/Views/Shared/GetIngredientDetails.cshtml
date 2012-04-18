@@ -1,0 +1,28 @@
+﻿@using RedRobin.DataAccess.Models
+@model XmlIngredient
+<div class="ingredient-header">
+
+   <div id="match-ingredients-modal">
+                        @Html.ActionLink("Click to Select Ingredient Match", "IngredientMatchControl", "MatchedItems",
+                        new { xmlingredientid = @Model.XmlImportIngredientId },
+                        new { @class = "openDialog", data_dialog_id = "MatchDialog", data_dialog_title = "Find Ingredient for  " + @Model.ItemIngredientName })
+                    </div>
+</div>
+@if (@Model.IngredientMatch != null)
+     {
+<ul id="ingredient-detail">
+    <li>Name: @Model.IngredientMatch.managename</li>
+    <li>Id: @Model.IngredientMatch.ingredientid</li>
+    <li>Data object id: @Model.IngredientMatch.DataObjectId</li>
+    <li>Display name: @Model.IngredientMatch.displayname</li>
+    <li>Category: @Model.IngredientMatch.ingredientcategoryid</li>
+    @foreach (var nutrient in @Model.IngredientMatch.Nutrients)
+{
+        if ( !nutrient.NutrientInfo.IsEmpty())
+        {
+            <li>@nutrient.NutrientInfo</li>
+        }
+}
+</ul>
+    }
+

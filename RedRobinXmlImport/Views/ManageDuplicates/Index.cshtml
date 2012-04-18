@@ -1,0 +1,56 @@
+﻿@using RedRobin.DataAccess.Models
+@model DuplicateManager
+@{
+    ViewBag.Title = "title";
+}
+<h2>
+    @ViewBag.Total items</h2>
+<div class="row-header">
+    <div class="item">
+        <div class="header">
+            Xml Ingredient</div>
+    </div>
+    <div class="item">
+        <div class="header">
+            Match Candidates</div>
+    </div>
+</div>
+@foreach (var dup in @Model.Duplicates)
+{
+
+
+    <div id="duplicates-row" class="matchrow">
+        <div class="item">
+            <div class="header">@dup.Key.Name</div>
+            <div class="header">@dup.Key.NumberOfDups Duplicates</div>
+        </div>
+        <div class="item">
+            @if (dup.Value.Count > 0)
+            {
+                foreach (var synch in dup.Value)
+                {
+                <a class="match" href="/ManageDuplicate/ShrinkDuplicates?itemname=@dup.Key.Name&itemguid=@synch.DataObjectId">
+                    <div class="header">@synch.displayname - @synch.DataObjectId</div>
+                </a>
+                <div class="details">
+                    <ul>
+                        @foreach (var nut in synch.Nutrients)
+                        {
+                            if (!nut.NutrientInfo.IsEmpty())
+                            {
+                            <li>@nut.NutrientInfo</li>
+                            }
+                        }
+                    </ul>
+                </div>
+                }
+            }
+            else
+            {
+                <div class="no-results">
+                    None of these ingredients have been matched</div>
+            }
+        </div>
+    </div>
+                
+}

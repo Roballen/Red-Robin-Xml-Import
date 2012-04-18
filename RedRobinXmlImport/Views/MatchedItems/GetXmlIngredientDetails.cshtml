@@ -1,0 +1,20 @@
+﻿@model RedRobin.DataAccess.Models.XmlIngredient
+<div class="ingredient-header">
+    Xml Ingredient </div>
+
+<ul id="ingredient-detail">
+<li>Name: @Model.ItemIngredientName</li>
+    <li>Guid: @Model.ItemIngredientGuid</li>
+    <li>Weight: @Model.Quantity @Model.QuantityUnit</li>
+    <li>Calories: @Model.Calories</li>
+    <li>Calories From Fat: @Model.FatCalories</li>
+    <li>Protein: @Model.Protein g</li>
+    <li>Carbohydrates: @Model.Carbohydrates g</li>
+    <li>Dietary Fiber: @Model.Fiber g</li>
+    <li>Sugars: @Model.Sugar g</li>
+    <li>Total Fat: @Model.Fat g</li>
+    <li>Saturated Fat: @Model.SaturatedFat g</li>
+    <li>Trans Fat: @Model.TransFat g</li>
+    <li>Cholesterol: @Model.Cholesterol mg</li>
+    <li>Sodium: @Model.Sodium mg</li>
+</ul>

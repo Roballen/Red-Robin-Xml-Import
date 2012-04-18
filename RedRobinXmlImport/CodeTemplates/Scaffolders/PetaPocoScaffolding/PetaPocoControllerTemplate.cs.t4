@@ -1,0 +1,148 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using <#= Model.Namespace #>.Business;
+using <#= Model.Namespace #>.Models;
+
+namespace <#= Model.Namespace #>.Controllers
+{
+    public class <#= Model.ControllerName #>Controller : Controller
+    {
+		public PetaPocoRepository repo;
+		public <#= Model.ControllerName #>Controller(){
+			repo = new PetaPocoRepository();
+		}
+       
+        public ActionResult Index()
+        {
+			var contextVm = new ViewModels.BasicVM<<#= Model.ControllerName #>Poco>();
+            contextVm.PageProperties = new PageProperties()
+                                           {
+                                               Description = "Index page description",
+                                               Heading = "Index Heading",
+                                               Keywords = "keyword one keyword two",
+                                               SubHeading = "Index sub heading",
+                                               Title = "Index title"
+                                           };
+            contextVm.DataList = repo.Query<<#= Model.ControllerName #>Poco>().ToList();
+            
+            return View(contextVm);
+
+        }
+
+        public ActionResult Details(int id)
+        {
+			var contextVm = new ViewModels.BasicVM<<#= Model.ControllerName #>Poco>();
+
+            contextVm.Data = repo.Single<<#= Model.ControllerName #>Poco>(id);
+            
+            contextVm.PageProperties = new PageProperties()
+                                           {
+                                               Description = "A page description",
+                                               Heading = "A heading for <#= Model.ControllerName #>",
+                                               Keywords = "keyword one keyword two",
+                                               SubHeading = "subheading for <#= Model.ControllerName #>",
+                                               Title = "Details page for <#= Model.ControllerName #>"
+                                           };
+			return View(contextVm);
+
+        }
+      
+        public ActionResult Create()
+        {
+			var contextVm = new ViewModels.BasicVM<<#= Model.ControllerName #>Poco>();
+            contextVm.Data = new <#= Model.ControllerName #>Poco();
+            contextVm.PageProperties = new PageProperties
+            {
+                Heading = "Create page for <#= Model.ControllerName #>",
+                SubHeading = "Create a new <#= Model.ControllerName #>",
+                Title = "Create new <#= Model.ControllerName #>"
+            };
+            
+            return View(contextVm);
+        } 
+
+        [HttpPost]
+        public ActionResult Create(ViewModels.BasicVM<<#= Model.ControllerName #>Poco> collection)
+        {
+            try
+            {
+				var newId = repo.Insert(collection.Data);
+
+                return RedirectToAction("Index");
+            }
+            catch(Exception e)
+            {
+				//Add your logging here.
+                ViewBag.Exception = e;
+                return View("Error/Basic");
+            }
+        }
+        
+        public ActionResult Edit(int id)
+        {
+			var contextVm = new ViewModels.BasicVM<<#= Model.ControllerName #>Poco>();
+            contextVm.Data = repo.Single<<#= Model.ControllerName #>Poco>(id);
+            contextVm.PageProperties = new PageProperties
+            {
+                Heading = "Edit page for <#= Model.ControllerName #>",
+                SubHeading = "Edit a new <#= Model.ControllerName #>",
+                Title = "Edit new <#= Model.ControllerName #>"
+            };
+            
+            return View(contextVm);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, ViewModels.BasicVM<<#= Model.ControllerName #>Poco> collection)
+        {
+            try
+            {
+				var newId = repo.Update(collection.Data, id);
+
+                return RedirectToAction("Index");
+            }
+            catch(Exception e)
+            {
+				//Add your logging here.
+                ViewBag.Exception = e;
+                return View("Error/Basic");
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+			var contextVm = new ViewModels.BasicVM<<#= Model.ControllerName #>Poco>();
+            contextVm.Data = repo.Single<<#= Model.ControllerName #>Poco>(id);
+            contextVm.PageProperties = new PageProperties
+            {
+                Heading = "Delete <#= Model.ControllerName #>",
+                SubHeading = "Delete <#= Model.ControllerName #>",
+                Title = "Delete <#= Model.ControllerName #>"
+            };
+
+            return View(contextVm);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, ViewModels.BasicVM<<#= Model.ControllerName #>Poco> collection)
+        {
+            try
+            {
+                
+ 				repo.Delete<<#= Model.ControllerName #>Poco>(id);
+                return RedirectToAction("Index");
+            }
+            catch(Exception e)
+            {
+				//Add your logging here.
+                ViewBag.Exception = e;
+                return View("Error/Basic");
+            }
+        }
+    }
+}
