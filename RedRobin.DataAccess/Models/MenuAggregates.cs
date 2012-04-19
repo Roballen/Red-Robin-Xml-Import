@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PetaPoco;
 using RedRobin.DataAccess.Models.Generated;
 using Utilities;
 
@@ -23,6 +24,12 @@ namespace RedRobin.DataAccess.Models
             Nutrients = new List<NutrientDisplay>();
         }
         public List<NutrientDisplay> Nutrients { get; set; } 
+    }
+
+    public class IngredientCandidate : IngredientAggregate
+    {
+        [Column]
+        public string Calories { get; set; }
     }
 
     public class NutrientDisplay : NutritionFact

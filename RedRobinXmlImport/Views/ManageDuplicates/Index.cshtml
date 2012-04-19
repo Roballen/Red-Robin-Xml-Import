@@ -21,15 +21,15 @@
 
     <div id="duplicates-row" class="matchrow">
         <div class="item">
-            <div class="header">@dup.Key.Name</div>
+            <div class="header">@dup.Key.DisplayName</div>
             <div class="header">@dup.Key.NumberOfDups Duplicates</div>
         </div>
-        <div class="item">
+        <div class="item" id="@dup.Key.DisplayName-row">
             @if (dup.Value.Count > 0)
             {
                 foreach (var synch in dup.Value)
                 {
-                <a class="match" href="/ManageDuplicate/ShrinkDuplicates?itemname=@dup.Key.Name&itemguid=@synch.DataObjectId">
+                <a id="@dup.Key.DisplayName" class="match" href="/ManageDuplicates/ShrinkDuplicates?itemname=@dup.Key.Name&itemguid=@synch.DataObjectId&calories=@dup.Key.Calories&quantity=@dup.Key.Quantity">
                     <div class="header">@synch.displayname - @synch.DataObjectId</div>
                 </a>
                 <div class="details">

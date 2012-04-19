@@ -144,12 +144,12 @@ namespace RedRobin.DataAccess
         {
             return GetDataBase().Fetch<XmlMenuItem>(" where XmlImportMenuItemId=@0", xmlmenuitem).SingleOrDefault();
         }
-        public List<IngredientAggregate> GetIngredientCandidatesByName(string name)
+        public List<IngredientCandidate> GetIngredientCandidatesByName(string name)
         {
             name = name.AlphabetOnly(true, false);
             var splitz = name.Split(' ');
             var orderedlist = splitz.OrderBy(s => s.Length);
-            var builder = Sql.Builder.Append("Select * from Ingredients where active=1 AND ");
+            var builder = Sql.Builder.Append("Select *, NutritionFacts.value as Calories from Ingredients inner join NutritionFacts on NutritionFacts.ingredientid = Ingredients.ingredientid and NutritionFacts.nutritionfacttypeid = 3 where Ingredients.active=1 AND ");
             bool first = true;
 
             foreach (var s in orderedlist)
@@ -160,20 +160,21 @@ namespace RedRobin.DataAccess
                         builder = builder.Append(" OR ");
 
                     first = false;
-                    builder = builder.Append("displayname LIKE '%[^a-z]" + s + "[^a-z]%' OR displayname LIKE '" + s + "[^a-z]%' OR displayname LIKE '%[^a-z]" + s + "'");
+                    builder = builder.Append("Ingredients.displayname LIKE '%[^a-z]" + s + "[^a-z]%' OR Ingredients.displayname LIKE '" + s + "[^a-z]%' OR Ingredients.displayname LIKE '%[^a-z]" + s + "'");
                 }
             }
 
-            return GetDataBase().Fetch<IngredientAggregate>(builder);
+            return GetDataBase().Fetch<IngredientCandidate>(builder);
 
         }
 
-        public List<IngredientAggregate> GetIngredientCandidatesByPrevious(string menuguid)
+        public List<IngredientCandidate> GetIngredientCandidatesByPrevious(string menuguid)
         {
-            return GetDataBase().Fetch<IngredientAggregate>(
-                Sql.Builder.Append("Select Ingredients.* from Ingredients ")
+            return GetDataBase().Fetch<IngredientCandidate>(
+                Sql.Builder.Append("Select Ingredients.*,NutritionFacts.value as Calories from Ingredients ")
                 .Append("inner join MenuItemIngredients on MenuItemIngredients.ingredientid = Ingredients.ingredientid ")
-                .Append("where  active = 1 and MenuItemIngredients.menuitemid = (select menuitemid from menuitems where dataobjectid = '" + menuguid + "')")
+                .Append("inner join NutritionFacts on NutritionFacts.ingredientid = Ingredients.ingredientid and NutritionFacts.nutritionfacttypeid = 3")
+                .Append("where Ingredients.active = 1 and MenuItemIngredients.menuitemid = (select menuitemid from menuitems where dataobjectid = '" + menuguid + "')")
                 );
         }
 
@@ -504,12 +505,72 @@ namespace RedRobin.DataAccess
 
                 }
                 var dup = new Duplicate();
-                dup.Name = xmlImportIngredient.ItemIngredientName + " with " + xmlImportIngredient.Calories + " calories";
+                dup.Name = xmlImportIngredient.ItemIngredientName;
+                dup.DisplayName = xmlImportIngredient.ItemIngredientName + " with " + xmlImportIngredient.Calories + " calories";
                 dup.NumberOfDups = items.Count;
                 manager.Duplicates.Add(dup, ingredients);
             }
             return manager;
 
+        }
+
+        public DuplicateManager GetDuplicates()
+        {
+            DuplicateManager manager = new DuplicateManager();
+            var dups = GetDataBase().Fetch<DuplicateIngredients>( " SELECT ItemIngredientName, Calories, Quantity, COUNT(ItemIngredientName) AS NumOccurrences FROM XmlImportIngredients GROUP BY ItemIngredientName, Calories, Quantity HAVING ( COUNT(ItemIngredientName) > 1 ) order by itemingredientname");
+            foreach (var xmlImportIngredient in dups)
+            {
+                //this get all of the ingredient ids where there is an xref and there is a name and calories match
+                List<IngredientAggregate> ingredients = new List<IngredientAggregate>();
+                var candidates = GetDuplicateIngredientIds(xmlImportIngredient.Calories,  xmlImportIngredient.ItemIngredientName, xmlImportIngredient.Quantity);
+                
+                if ( candidates.Count < xmlImportIngredient.NumOccurrences ) //means there is a null and needs update
+                {
+                    List<string> added = new List<string>();
+                    foreach (var ingredientcandidate in candidates)
+                    {
+                        if ( ! added.Contains(ingredientcandidate.DataObjectId.ToString()))
+                        {
+                            var ingdredient = GetMatchedIngredient(ingredientcandidate.DataObjectId.ToString(), true);
+                            if (ingdredient != null)
+                            {
+                                added.Add(ingredientcandidate.DataObjectId.ToString());
+                                ingredients.Add(ingdredient);
+                            }
+                        }
+                    }
+                }
+
+                if ( ingredients.Count > 0 || candidates.Count == 0)
+                {
+                    var dup = new Duplicate();
+                    dup.Name = xmlImportIngredient.ItemIngredientName;
+                    dup.Calories = xmlImportIngredient.Calories;
+                    dup.Quantity = xmlImportIngredient.Quantity;
+                    dup.DisplayName = xmlImportIngredient.ItemIngredientName + " with " + xmlImportIngredient.Calories + " calories";
+                    dup.NumberOfDups = xmlImportIngredient.NumOccurrences;
+                    manager.Duplicates.Add(dup, ingredients);
+                }
+            }
+            return manager;
+
+        }
+
+        public List<Ingredient> GetDuplicateIngredientIds(string calories, string ItemName, string quantity)
+        {
+            ItemName = ItemName.Replace("'", "''");
+            return
+                GetDataBase().Fetch<Ingredient>(Sql.Builder.Append(
+                    "select Ingredients.DataObjectId from XmlImportIngredients ").Append
+                                                    ("left outer join XmlIngredientsXref on ").Append
+                                                    ("XmlIngredientsXref.xmlguid = XmlImportIngredients.ItemIngredientGuid ")
+                                                    .Append
+                                                    ("left outer join Ingredients ").Append
+                                                    ("on XmlIngredientsXref.ingredientsguid = Ingredients.DataObjectId ")
+                                                    .Append
+                                                    ("where XmlImportIngredients.ItemIngredientName ='"+ ItemName +"' ")
+                                                    .Append
+                                                    ("and XmlImportIngredients.Quantity='" + quantity + "' and XmlImportIngredients.Calories='" + calories + "' and XmlIngredientsXref.ingredientsguid IS NOT NULL "));
         }
 
         public List<XmlImportIngredient> GetXmlIngredientsByName(string name, string calories)
@@ -520,5 +581,27 @@ namespace RedRobin.DataAccess
         }
 
 
+
+        public bool UpdateXrefIngredients(string itemname, string quantity, string calories, string itemguid)
+        {
+            try
+            {
+                var updates = GetDataBase().Fetch<XmlImportIngredient>( " select * from XmlImportIngredients where ItemIngredientName =@0 and Calories=@1 and Quantity=@2", itemname, calories, quantity);
+                foreach (var xmlImportIngredient in updates)
+                {
+                    var ingredient = GetMatchedIngredient(itemguid, false);
+
+                    if (GetDataBase().Execute(" Update XmlIngredientsXref set ingredientsguid='" + itemguid +
+                                          "', igredientname='" + ingredient.managename + "' where xmlguid='" + xmlImportIngredient.ItemIngredientGuid + "'") != 1)
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -69,3 +69,4 @@ a .matchrow:hover { background-color: #E4E4E4;}
 #match-ingredients-modal a:hover {  background-color: #E4E4E4; }#match-ingredients-modal a {color: #034AF3;}
 #duplicates-row {border: 2px solid rgba(0, 0, 0, 0.1);}
 .no-results {}
+.item.calories {  background-color: #9CF;color: black;}

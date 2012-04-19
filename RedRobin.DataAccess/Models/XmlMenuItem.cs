@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PetaPoco;
 using RedRobin.DataAccess.Models.Generated;
 
 namespace RedRobin.DataAccess.Models
@@ -23,6 +24,9 @@ namespace RedRobin.DataAccess.Models
 
     public class Duplicate
     {
+        public string DisplayName { get; set; }
+        public string Calories { get; set; }
+        public string Quantity { get; set; }
         public string Name { get; set; }
         public int NumberOfDups { get; set; }
     }
@@ -39,6 +43,12 @@ namespace RedRobin.DataAccess.Models
     }
 
     public class XmlMenuItems : List<XmlMenuItem>{}
+
+    public class DuplicateIngredients : XmlImportIngredient
+    {
+        [Column]
+        public int NumOccurrences { get; set; }
+    }
 
 
 

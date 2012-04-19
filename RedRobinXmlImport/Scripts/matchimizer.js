@@ -29,6 +29,8 @@ Match.global.pageLoad = function (f) {
 
 
 Match.Aggregate = Match.Aggregate || {};
+Match.Duplicates = Match.Duplicates || {};
+
 
 Match.Aggregate.init = function () {
 };
@@ -47,7 +49,7 @@ Match.ingredientsMatching.wireRadioButtons = function () {
         $('#' + this.name + '-matched').load("/MatchedItems/UpdateMenuItemsMatch?xmlguid=" + this.name + "&matchedGuid=" + this.value);
         $(this).closest(".dialog").dialog("close");
     });
-    
+
 };
 
 Match.Aggregate.wireModals = function () {
@@ -63,7 +65,7 @@ Match.Aggregate.wireModals = function () {
             title: $(this).attr("data-dialog-title"),
             close: function () { $(this).remove(); },
             width: 1001,
-                height: 600,
+            height: 600,
             position: 'top',
             modal: true
         });
@@ -80,8 +82,23 @@ Match.Aggregate.wireModals = function () {
     });
 
 };
-Match.global.pageLoad(Match.Aggregate.init, Match.Aggregate.wireModals, Match.ingredientsMatching.wireRadioButtons);
+
+Match.Duplicates.wireLinks = function () {
+    $('#duplicates-row .item .match').live("click", function (e) {
+        e.preventDefault();
+//        $('#' + this.id + '-row').load(this.href);
+        $(this).closest("#duplicates-row").load(this.href);
+        $(this).closest(".dialog").dialog("close");
+    });
+};
+
+Match.global.pageLoad(Match.Aggregate.init, Match.Aggregate.wireModals, Match.ingredientsMatching.wireRadioButtons, Match.Duplicates.wireLinks);
 
 $(document).ready(function () {
     Match.onload();
+
+    $("li:contains('Calories:')").css({ backgroundColor: '#99CCFF', fontWeight: 'bold', color: '#000', textShadow: 'none' });
+    $(':radio').change(function () {
+        $("li:contains('Calories:')").css({ backgroundColor: '#99CCFF', fontWeight: 'bold', color: '#000', textShadow: 'none' });
+    });
 });

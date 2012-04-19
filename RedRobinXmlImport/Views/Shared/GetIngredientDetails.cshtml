@@ -5,7 +5,7 @@
    <div id="match-ingredients-modal">
                         @Html.ActionLink("Click to Select Ingredient Match", "IngredientMatchControl", "MatchedItems",
                         new { xmlingredientid = @Model.XmlImportIngredientId },
-                        new { @class = "openDialog", data_dialog_id = "MatchDialog", data_dialog_title = "Find Ingredient for  " + @Model.ItemIngredientName })
+                        new { @class = "openDialog", data_dialog_id = "MatchDialog", data_dialog_title = "Find Ingredient for  " + @Model.ItemIngredientName + ", " + @Model.Calories + "Calories" })
                     </div>
 </div>
 @if (@Model.IngredientMatch != null)

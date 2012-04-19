@@ -8,3 +8,13 @@ C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\bin\Utilities.dll
 C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\bin\RedRobin.DataAccess.pdb
 C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\bin\System.Web.Mvc.dll
 C:\root\dev\RedRobinXmlImport\RedRobinXmlImport\bin\System.Web.Mvc.xml
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\obj\Debug\ResolveAssemblyReference.cache
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\obj\Debug\RedRobinXmlImport.dll
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\bin\RedRobinXmlImport.dll
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\bin\RedRobinXmlImport.pdb
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\bin\RedRobin.DataAccess.dll
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\bin\System.Web.Mvc.dll
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\bin\Utilities.dll
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\bin\RedRobin.DataAccess.pdb
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\bin\System.Web.Mvc.xml
+C:\root\git\dev\RedRobinXmlImport\RedRobinXmlImport\obj\Debug\RedRobinXmlImport.pdb
