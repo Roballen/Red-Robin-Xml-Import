@@ -63,7 +63,7 @@ Match.Aggregate.wireModals = function () {
             title: $(this).attr("data-dialog-title"),
             close: function () { $(this).remove(); },
             width: 1001,
-                height: 800,
+                height: 600,
             position: 'top',
             modal: true
         });
