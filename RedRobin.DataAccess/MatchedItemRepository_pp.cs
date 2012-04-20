@@ -149,7 +149,7 @@ namespace RedRobin.DataAccess
             name = name.AlphabetOnly(true, false);
             var splitz = name.Split(' ');
             var orderedlist = splitz.OrderBy(s => s.Length);
-            var builder = Sql.Builder.Append("Select *, NutritionFacts.value as Calories from Ingredients inner join NutritionFacts on NutritionFacts.ingredientid = Ingredients.ingredientid and NutritionFacts.nutritionfacttypeid = 3 where Ingredients.active=1 AND ");
+            var builder = Sql.Builder.Append("Select *, NutritionFacts.value as Calories from Ingredients inner join NutritionFacts on NutritionFacts.ingredientid = Ingredients.ingredientid and NutritionFacts.nutritionfacttypeid = 1 where Ingredients.active=1 AND ");
             bool first = true;
 
             foreach (var s in orderedlist)
@@ -173,7 +173,7 @@ namespace RedRobin.DataAccess
             return GetDataBase().Fetch<IngredientCandidate>(
                 Sql.Builder.Append("Select Ingredients.*,NutritionFacts.value as Calories from Ingredients ")
                 .Append("inner join MenuItemIngredients on MenuItemIngredients.ingredientid = Ingredients.ingredientid ")
-                .Append("inner join NutritionFacts on NutritionFacts.ingredientid = Ingredients.ingredientid and NutritionFacts.nutritionfacttypeid = 3")
+                .Append("inner join NutritionFacts on NutritionFacts.ingredientid = Ingredients.ingredientid and NutritionFacts.nutritionfacttypeid = 1")
                 .Append("where Ingredients.active = 1 and MenuItemIngredients.menuitemid = (select menuitemid from menuitems where dataobjectid = '" + menuguid + "')")
                 );
         }
